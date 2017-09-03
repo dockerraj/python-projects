@@ -98,3 +98,9 @@ def win_check(board,mark):
             return win_status
         
     return False
+
+def place_marker(board, marker, position):
+    x=position[0]
+    y=position[1]
+    board[x][y]=marker
+    return board
