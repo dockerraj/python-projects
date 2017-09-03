@@ -111,3 +111,16 @@ def choose_first():
             return 'Player2'
         else:
             return 'Player1'
+
+def full_board_check(board):
+    x=1
+    y=1
+    while x<degree_of_board+1 :
+        y=1
+        while y<degree_of_board+1 :
+            if not (board[x][y]=='X' or board[x][y]=='O') :
+                return False
+            y=y+1 
+        x=x+1
+        
+    return True
