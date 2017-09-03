@@ -146,3 +146,41 @@ def player_choice(board):
 def replay():    
     return raw_input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
 
+
+
+#### Play the game
+print('Welcome to Tic Tac Toe!')
+
+while True:
+    # Reset the board
+    theBoard = [[' ',' ',' ',' '],[' ',' ',' ',' '],[' ',' ',' ',' '],[' ',' ',' ',' ']]
+    marker_choice = player_input()
+    player_turn = choose_first()
+    print(player_turn + ' will go first.')
+    game_on = True
+
+    while game_on:
+        display_board(theBoard)
+        print(player_turn + ', your turn to chose an position.')
+        print('Choose position for your marker ' + marker_choice[player_turn])
+        position = player_choice(theBoard)
+        place_marker(theBoard, marker_choice[player_turn], position)
+	if win_check(theBoard, marker_choice[player_turn]):
+		display_board(theBoard)
+		print('Congratulations! You have won the game!')
+		game_on = False
+	else:
+                if full_board_check(theBoard):
+        	        display_board(theBoard)
+        	        print('The game is a draw!')
+			break
+
+	if player_turn == 'Player1':
+            # Change to Player2's turn.
+            player_turn ='Player2'
+	else:
+            # Change to Player1's turn.
+            player_turn ='Player1'           
+            
+    if not replay():
+        break
