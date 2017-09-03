@@ -16,14 +16,14 @@ def display_board(board):
         x=x+1;
     
 def player_input():
-    player_markers={'p1':'','p2':''}
+    player_markers={'Player1':'','Player2':''}
     
     print("Player 1, Choose your marker - X or O ? ")
     player_markers['p1']=raw_input('Player 1: Do you want to be X or O? ').upper()
-    if (player_markers['p1']=='X'):
-        player_markers['p2']='O'
-    elif(player_markers['p1']=='O'):
-        player_markers['p2']='X'
+    if (player_markers['Player1']=='X'):
+        player_markers['Player2']='O'
+    elif(player_markers['Player1']=='O'):
+        player_markers['Player2']='X'
     else:
         player_markers=player_input()
     return player_markers
@@ -104,3 +104,10 @@ def place_marker(board, marker, position):
     y=position[1]
     board[x][y]=marker
     return board
+
+import random
+def choose_first():
+        if random.randint(0, 1) == 0:
+            return 'Player2'
+        else:
+            return 'Player1'
