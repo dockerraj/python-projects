@@ -141,6 +141,7 @@ def player_choice(board):
     while not ( (is_valid_position(position)) and (space_check(board,position)) ):
         position_input = raw_input('Choose your next position: (x,y) ')
         position=[int(item) for item in position_input.split(',') if item.strip()]
+    return position
 
 def replay():    
     return raw_input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
