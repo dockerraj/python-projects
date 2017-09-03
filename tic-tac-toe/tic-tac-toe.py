@@ -124,3 +124,22 @@ def full_board_check(board):
         x=x+1
         
     return True
+
+def is_valid_position(position):
+    if (len(position)==2):
+        return position[0]<=degree_of_board and position[1]<=degree_of_board and position[0]>0 and position[1]>0
+    else:
+        return False
+def space_check(board, position):
+    x=position[0]
+    y=position[1]
+    return board[x][y]==' '
+
+def player_choice(board):
+    position=(0,0)
+    position_input=''
+    while not ( (is_valid_position(position)) and (space_check(board,position)) ):
+        position_input = raw_input('Choose your next position: (x,y) ')
+        position=[int(item) for item in position_input.split(',') if item.strip()]
+
+        
