@@ -19,7 +19,7 @@ def player_input():
     player_markers={'Player1':'','Player2':''}
     
     print("Player 1, Choose your marker - X or O ? ")
-    player_markers['p1']=raw_input('Player 1: Do you want to be X or O? ').upper()
+    player_markers['Player1']=raw_input('Player 1: Do you want to be X or O? ').upper()
     if (player_markers['Player1']=='X'):
         player_markers['Player2']='O'
     elif(player_markers['Player1']=='O'):
